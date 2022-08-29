@@ -15,10 +15,10 @@ public class App {
     DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
     DocumentBuilder db = dbf.newDocumentBuilder();
     org.w3c.dom.Document doc = db.parse(new File("Title.xml"));
-    eventSort(doc);
+    expiredDoc(doc);
     }
 
-public static Document eventSort(Document doc) {
+public static Document expiredDoc(Document doc) {
     
     int i = 0;
     LocalDate sysDate = null;
