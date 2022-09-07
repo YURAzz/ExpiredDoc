@@ -23,35 +23,35 @@ public static Document expiredDoc(Document doc) {
     //sysdate exctraction
     int i = 0;
     LocalDate sysDate = null;
-    LocalDate startDate = null;
     LocalDate endDate = null;
-    CharSequence sStartDate = null;
+    LocalDate startDate = null;
     CharSequence sEndDate = null;
+    CharSequence sStartDate = null;
     DateTimeFormatter formatter = null;
     CachedXPathAPI v = new CachedXPathAPI();
 
     //hour and date vars
+    NodeList endHourValues = null;
+    NodeList endDateValues = null;
+    Element endDateElement = null;    
+    Element endHourElement = null;
+    NodeList startDateValues = null;
+    NodeList startHourValues = null;
+    Element startDateElement = null;    
+    Element startHourElement = null;
     String sEndHourValuesPath = "/content/group/definition/list/value/schedulation/list/value/window/text[@name='endHour']/value";
     String sStartHourValues = "/content/group/definition/list/value/schedulation/list/value/window/text[@name='startHour']/value";
-    NodeList endHourValues = null;
-    NodeList startHourValues = null;
-    String startDateValuesPath = "/content/group/definition/list/value/schedulation/list/value/window/date[@name='startDate']/value";
     String endDateValuesPath = "/content/group/definition/list/value/schedulation/list/value/window/date[@name='endDate']/value";
-    NodeList startDateValues = null;
-    NodeList endDateValues = null;
-    Element startDateElement = null;    
-    Element endDateElement = null;    
-    Element startHourElement = null;
-    Element endHourElement = null;
+    String startDateValuesPath = "/content/group/definition/list/value/schedulation/list/value/window/date[@name='startDate']/value";
 
     //utilized for the removal of multiple events collision
-    NodeList newNodesList = null;
-    NodeList removaList = null;
-    NodeList wholeList = null;
     Element newNode = null;
-    String str = "/content/group/definition/list/value/schedulation/list[@name='fruitionWindows']/value/window[@id='0']";
-    String str1 = "/content/group/definition/list/value/schedulation/list[@name='fruitionWindows']/value";
+    NodeList wholeList = null;
+    NodeList removaList = null;
+    NodeList newNodesList = null;
     String str2 = "/content/group/definition/list/value/schedulation/list[@name='fruitionWindows']";
+    String str1 = "/content/group/definition/list/value/schedulation/list[@name='fruitionWindows']/value";
+    String str = "/content/group/definition/list/value/schedulation/list[@name='fruitionWindows']/value/window[@id='0']";
 
         try {
 
